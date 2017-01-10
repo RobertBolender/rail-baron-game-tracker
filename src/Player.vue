@@ -2,17 +2,12 @@
   <div class="player">
     <ColorPicker :player="player" v-model="playerColor" />
     <input class="playerName" v-model="playerName">
-    <div v-if="homeCity">
-      Home: {{homeCity}}
-      <div v-if="destination">
-        {{destination}}
-        {{payout}}
-      </div>
-      <div v-else>No destination</div>
+    <HomePicker :player="player" v-model="homeCity" />
+    <div v-if="destination">
+      {{destination}}
+      {{payout}}
     </div>
-    <div v-else>
-      <HomePicker :player="player" v-model="homeCity" />
-    </div>
+    <div v-else>No destination</div>
   </div>
 </template>
 
