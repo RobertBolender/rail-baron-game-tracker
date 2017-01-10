@@ -2,6 +2,15 @@
   <div class="player">
     <input class="playerName" v-model="playerName">
     <ColorPicker :player="player" v-model="playerColor" />
+    <div v-if="homeCity">
+      {{homeCity}}
+      <div v-if="destination">
+        {{destination}}
+        {{payout}}
+      </div>
+      <div v-else>No destination</div>
+    </div>
+    <div v-else>No home</div>
   </div>
 </template>
 
@@ -15,7 +24,10 @@ export default {
   computed: {
     ...mapProperties([
       'playerName',
-      'playerColor'
+      'playerColor',
+      'homeCity',
+      'destination',
+      'payout'
     ])
   },
   methods: {
