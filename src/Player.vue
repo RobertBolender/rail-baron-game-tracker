@@ -1,18 +1,21 @@
 <template>
   <div class="player">
     <input class="playerName" v-model="playerName">
+    <ColorPicker :player="player" v-model="playerColor" />
   </div>
 </template>
 
 <script>
 import { mapMutations } from 'vuex';
 import { mapProperties } from './bobx';
+import ColorPicker from './ColorPicker.vue';
 
 export default {
   props: ['player'],
   computed: {
     ...mapProperties([
-      'playerName'
+      'playerName',
+      'playerColor'
     ])
   },
   methods: {
@@ -20,6 +23,9 @@ export default {
       'increment',
       'decrement'
     ])
+  },
+  components: {
+    ColorPicker
   }
 }
 </script>
