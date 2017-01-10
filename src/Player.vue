@@ -1,9 +1,6 @@
 <template>
   <div class="player">
-    {{ name }}
-    <button @click="decrement">-</button>
-    {{ sharedState.count }}
-    <button @click="increment">+</button>
+    <input class="playerName" v-model="playerName">
   </div>
 </template>
 
@@ -11,11 +8,18 @@
 import { mapMutations } from 'vuex';
 
 export default {
-  name: 'player',
-  props: ['name'],
+  props: ['player'],
   computed: {
-    sharedState () {
-      return this.$store.state
+    playerName: {
+      get () {
+        return this.player.playerName;
+      },
+      set (value) {
+        this.$store.commit('namePlayer', {
+          id         : this.player.id,
+          playerName : value
+        });
+      }
     }
   },
   methods: {
@@ -27,13 +31,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .player {
   border: 1px solid #000;
   min-width: 200px;
   min-height: 200px;
   padding: 5px;
   text-align: left;
+}
+.playerName {
+  display: block;
+  background: none;
+  border: 1px solid #ddd;
+  &:active {
+    border: 1px solid black;
+  }
 }
 </style>
 
