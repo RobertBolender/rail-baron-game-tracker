@@ -1,5 +1,5 @@
 function mapProperties(properties) {
-  let ret = properties.reduce(function (obj = {}, prop) {
+  return properties.reduce((obj = {}, prop) => {
     obj[prop] = {
       get () {
         return this.player[prop];
@@ -14,7 +14,6 @@ function mapProperties(properties) {
     };
     return obj;
   }, {});
-  return ret;
 }
 
 export {
