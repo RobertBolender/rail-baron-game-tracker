@@ -1,6 +1,5 @@
 <template>
   <div class="player">
-    <input class="playerName" v-model="playerName">
     <ColorPicker :player="player" v-model="playerColor" />
     <div v-if="homeCity">
       {{homeCity}}
@@ -51,12 +50,16 @@ export default {
   text-align: left;
 }
 .playerName {
-  display: block;
+  display: inline-block;
   background: none;
   border: 1px solid #ddd;
+  max-width: 100px;
   &:active {
     border: 1px solid black;
   }
+}
+.colorPicker {
+  display: inline-block;
 }
 </style>
 
