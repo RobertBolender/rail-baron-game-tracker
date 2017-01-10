@@ -17,8 +17,8 @@ const store = new Vuex.Store({
     decrement (state) {
       state.count--
     },
-    namePlayer (state, payload) {
-      state.players[payload.id].playerName = payload.playerName;
+    updatePlayer (state, payload) {
+      state.players[payload.id][payload.propName] = payload.propValue;
     },
     addPlayer (state) {
       state.players.push( { id: state.players.length, playerName: 'Player ' + state.players.length } );

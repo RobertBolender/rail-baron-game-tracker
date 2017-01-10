@@ -6,21 +6,14 @@
 
 <script>
 import { mapMutations } from 'vuex';
+import { mapProperties } from './bobx';
 
 export default {
   props: ['player'],
   computed: {
-    playerName: {
-      get () {
-        return this.player.playerName;
-      },
-      set (value) {
-        this.$store.commit('namePlayer', {
-          id         : this.player.id,
-          playerName : value
-        });
-      }
-    }
+    ...mapProperties([
+      'playerName'
+    ])
   },
   methods: {
     ...mapMutations([
