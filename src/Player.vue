@@ -1,15 +1,18 @@
 <template>
   <div class="player">
     <ColorPicker :player="player" v-model="playerColor" />
+    <input class="playerName" v-model="playerName">
     <div v-if="homeCity">
-      {{homeCity}}
+      Home: {{homeCity}}
       <div v-if="destination">
         {{destination}}
         {{payout}}
       </div>
       <div v-else>No destination</div>
     </div>
-    <div v-else>No home</div>
+    <div v-else>
+      <HomePicker :player="player" v-model="homeCity" />
+    </div>
   </div>
 </template>
 
@@ -17,6 +20,7 @@
 import { mapMutations } from 'vuex';
 import { mapProperties } from './bobx';
 import ColorPicker from './ColorPicker.vue';
+import HomePicker from './HomePicker.vue';
 
 export default {
   props: ['player'],
@@ -36,7 +40,8 @@ export default {
     ])
   },
   components: {
-    ColorPicker
+    ColorPicker,
+    HomePicker
   }
 }
 </script>
