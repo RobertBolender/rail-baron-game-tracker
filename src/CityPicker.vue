@@ -15,7 +15,7 @@ export default {
   computed: {},
   data () {
     return {
-      options: Object.keys(this.$store.state.payouts)
+      options: Object.keys(this.$root.$data.payouts)
     }
   },
   methods: {

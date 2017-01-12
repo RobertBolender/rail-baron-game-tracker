@@ -20,18 +20,22 @@ const store = new Vuex.Store({
   plugins: [createPersistedState()]
 });
 
-const payouts = require('./data/payouts.json');
-store.state.payouts = payouts;
-
 if (store.state.players.length == 0){
   for (var i = 0; i < 6; i++){
     store.commit('addPlayer');
   }
 }
 
-new Vue({
+const payouts = require('./data/payouts.json');
+
+var root = new Vue({
   el: '#app',
   store,
-  render: h => h(App)
+  render: h => h(App),
+  data: function(){
+    return {
+      payouts: payouts
+    }
+  }
 })
 

@@ -23,11 +23,11 @@ export default {
     ]),
     payout: function(){
       if (this.destination && this.homeCity){
-        let payouts = this.$store.state.payouts;
+        let payouts = this.$root.$data.payouts;
         if (typeof payouts[this.destination] === 'undefined' || typeof payouts[this.destination][this.homeCity] === 'undefined'){
           return 'n/a';
         }
-        let number = this.$store.state.payouts[this.destination][this.homeCity];
+        let number = payouts[this.destination][this.homeCity];
         let string = number.replace('.',',').replace(/$/,'0');
         return string;
       } else {
