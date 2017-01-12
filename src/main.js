@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import App from './App.vue'
-import createPersistedState from 'vuex-persistedstate'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import App from './App.vue';
+import createPersistedState from 'vuex-persistedstate';
 
 Vue.use(Vuex);
 
@@ -26,6 +26,9 @@ const store = new Vuex.Store({
   },
   plugins: [createPersistedState()]
 });
+
+const payouts = require('./data/payouts.json');
+store.state.payouts = payouts;
 
 if (store.state.players.length == 0){
   store.commit('addPlayer');
