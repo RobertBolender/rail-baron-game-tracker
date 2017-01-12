@@ -25,7 +25,13 @@ export default {
     ]),
     payout: function(){
       if (this.destination && this.homeCity){
-        return this.$store.state.payouts[this.destination][this.homeCity];
+        let payouts = this.$store.state.payouts;
+        if (typeof payouts[this.destination] === 'undefined' || typeof payouts[this.destination][this.homeCity] === 'undefined'){
+          return 'n/a';
+        }
+        let number = this.$store.state.payouts[this.destination][this.homeCity];
+        let string = number.replace('.',',').replace(/$/,'0');
+        return string;
       } else {
         return 0;
       }
