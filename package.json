@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "babel-preset-stage-3": "^6.17.0",
+    "csv": "^1.1.0",
     "node-sass": "^4.1.1",
     "sass-loader": "^4.1.1",
     "vue": "^2.1.0",
