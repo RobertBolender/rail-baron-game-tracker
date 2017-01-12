@@ -3,7 +3,7 @@
     <ColorPicker :player="player" v-model="playerColor" />
     <input class="playerName" v-model="playerName">
     <HomePicker :player="player" v-model="homeCity" />
-    <DestinationPicker :player="player" v-model="destination" />
+    <DestinationPicker :player="player" v-model="destination" v-if="homeCity" />
   </div>
 </template>
 
@@ -42,16 +42,16 @@ export default {
 <style lang="scss" scoped>
 .player {
   border: 1px solid #000;
-  min-width: 200px;
-  min-height: 200px;
+  width: 100%;
   padding: 5px;
   text-align: left;
 }
 .playerName {
   display: inline-block;
   background: none;
-  border: 1px solid #ddd;
-  max-width: 100px;
+  color: #fff;
+  border: none;
+  max-width: 75px;
   &:active {
     border: 1px solid black;
   }

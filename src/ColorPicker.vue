@@ -1,11 +1,9 @@
 <template>
-  <div class="colorPicker">
-    <select v-model="playerColor">
-      <option v-for="option in options" :value="option">
-        {{option}}
-      </option>
-    </select>
-  </div>
+  <select class="colorPicker" v-model="playerColor">
+    <option v-for="option in options" :value="option">
+      {{option}}
+    </option>
+  </select>
 </template>
 
 <script>
@@ -27,6 +25,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.colorPicker {
+  background: #666;
+  border: none;
+  color: #fff;
+}
 </style>
 

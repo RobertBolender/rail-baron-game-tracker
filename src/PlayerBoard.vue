@@ -42,10 +42,16 @@ export default {
 
 <style lang="scss" scoped>
 #PlayerBoard {
-  background-color: #eee;
+  color: #fd0;
+  background-color: #333;
+  padding-top: 1.5em;
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+  }
   input { width: 100%; }
   ul {
-    max-width: 630px;;
+    max-width: 750px;
     margin: auto;
     padding: 20px 0;
     display: flex;
@@ -53,6 +59,7 @@ export default {
   }
   li {
     display: flex;
+    width: 100%;
     margin: 5px;
   }
 }

@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>{{ msg }}</h1>
     <PlayerBoard></PlayerBoard>
   </div>
 </template>
@@ -11,9 +10,7 @@ import PlayerBoard from './PlayerBoard.vue';
 export default {
   name: 'app',
   data () {
-    return {
-      msg: 'Welcome to Rail Baron Vue!'
-    }
+    return {}
   },
   components: {
     PlayerBoard
@@ -23,8 +20,12 @@ export default {
 
 <style>
 * { box-sizing: border-box; }
+body {
+  margin: 0;
+  background-color: #333;
+  font-family: 'Source Code Pro', monospace;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

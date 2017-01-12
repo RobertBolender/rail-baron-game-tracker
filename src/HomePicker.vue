@@ -1,8 +1,8 @@
 <template>
   <div class="homePicker">
     <div v-if="homeCity">
-      Home: {{homeCity}}
       <button @click="pickHome('')">&times;</button>
+      Home: {{homeCity}}
     </div>
     <CityPicker v-else :player="player" :value="homeCity" v-on:input="pickHome" />
   </div>
@@ -38,6 +38,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.homePicker {
+  display: inline-block;
+}
 </style>
 

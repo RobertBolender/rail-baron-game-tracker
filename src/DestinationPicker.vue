@@ -1,13 +1,11 @@
 <template>
   <div class="destinationPicker">
     <div v-if="destination">
-      Dest: {{destination}}
+      To: <span class="destination">{{destination}}</span>
+      For: <span class="payout" v-if="payout">${{payout}}</span>
       <button @click="pickDestination('')">&times;</button>
     </div>
     <CityPicker v-else :player="player" :value="destination" v-on:input="pickDestination" />
-    <div v-if="payout">
-      Payout: {{payout}}
-    </div>
   </div>
 </template>
 
@@ -55,6 +53,22 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.destinationPicker {
+  display: inline-block;
+  float: right;
+}
+.destination {
+  display: inline-block;
+  font-weight: bold;
+  min-width: 130px;
+}
+.payout {
+  color: #191;
+  font-weight: bold;
+  display: inline-block;
+  min-width: 75px;
+  text-align: right;
+}
 </style>
 
