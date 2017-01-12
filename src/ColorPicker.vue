@@ -26,10 +26,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.colorPicker {
-  background: #666;
-  border: none;
-  color: #fff;
-}
 </style>
 

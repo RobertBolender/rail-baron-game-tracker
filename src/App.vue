@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 * {
   box-sizing: border-box;
 }
@@ -34,4 +34,20 @@ h1, h2 {
   font-weight: normal;
 }
 
+button {
+  background: #666;
+  border: none;
+  color: #fff;
+  &:hover {
+    background-color: #ddd;
+    color: #000;
+  }
+}
+
+select {
+  background: #666;
+  border: none;
+  color: #fff;
+}
 </style>
+
