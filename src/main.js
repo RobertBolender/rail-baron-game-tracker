@@ -7,16 +7,9 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    count: 0,
     players: []
   },
   mutations: {
-    increment (state) {
-      state.count++
-    },
-    decrement (state) {
-      state.count--
-    },
     updatePlayer (state, payload) {
       state.players[payload.id][payload.propName] = payload.propValue;
     },
@@ -31,12 +24,9 @@ const payouts = require('./data/payouts.json');
 store.state.payouts = payouts;
 
 if (store.state.players.length == 0){
-  store.commit('addPlayer');
-  store.commit('addPlayer');
-  store.commit('addPlayer');
-  store.commit('addPlayer');
-  store.commit('addPlayer');
-  store.commit('addPlayer');
+  for (var i = 0; i < 6; i++){
+    store.commit('addPlayer');
+  }
 }
 
 new Vue({
@@ -44,3 +34,4 @@ new Vue({
   store,
   render: h => h(App)
 })
+

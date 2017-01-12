@@ -46,6 +46,7 @@ export default {
   padding: 5px;
   text-align: left;
 }
+
 .playerName {
   display: inline-block;
   background: none;
@@ -56,6 +57,7 @@ export default {
     border: 1px solid black;
   }
 }
+
 .colorPicker {
   display: inline-block;
 }

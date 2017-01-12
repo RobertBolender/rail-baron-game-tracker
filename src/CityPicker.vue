@@ -27,8 +27,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .cityPicker {
-    display: inline-block;
-  }
+.cityPicker {
+  display: inline-block;
+}
 </style>
 

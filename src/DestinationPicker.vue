@@ -31,7 +31,7 @@ export default {
         let string = number.replace('.',',').replace(/$/,'0');
         return string;
       } else {
-        return 0;
+        return 'n/a';
       }
     }
   },
@@ -58,11 +58,13 @@ export default {
   display: inline-block;
   float: right;
 }
+
 .destination {
   display: inline-block;
   font-weight: bold;
   min-width: 130px;
 }
+
 .payout {
   color: #191;
   font-weight: bold;
