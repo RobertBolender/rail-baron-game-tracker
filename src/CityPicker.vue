@@ -15,7 +15,7 @@ export default {
   computed: {},
   data () {
     return {
-      options: 'Seattle,Portland,Sacramento,Austin,New York'.split(',')
+      options: Object.keys(this.$store.state.payouts)
     }
   },
   methods: {

@@ -21,9 +21,7 @@ export default {
     ])
   },
   data () {
-    return {
-      options: 'Seattle,Portland,Sacramento,Austin,New York'.split(',')
-    }
+    return {}
   },
   methods: {
     pickHome: function(value){
