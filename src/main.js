@@ -27,6 +27,8 @@ if (store.state.players.length == 0){
 }
 
 const payouts = require('./data/payouts.json');
+const odds    = require('./data/odd_destinations.json');
+const evens   = require('./data/even_destinations.json');
 
 var root = new Vue({
   el: '#app',
@@ -34,7 +36,9 @@ var root = new Vue({
   render: h => h(App),
   data: function(){
     return {
-      payouts: payouts
+      payouts : payouts,
+      odds    : odds,
+      evens   : evens
     }
   }
 })

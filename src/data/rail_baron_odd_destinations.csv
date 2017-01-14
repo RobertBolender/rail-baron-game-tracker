@@ -1,0 +1,12 @@
+Roll,Region,NorthEast,SouthEast,NorthCentral,SouthCentral,Plains,NorthWest,SouthWest
+2,Plains,New_York,Charlotte,Cleveland,Memphis,Kansas_City,Spokane,San_Diego
+3,SouthEast,New_York,Charlotte,Cleveland,Memphis,Kansas_City,Spokane,San_Diego
+4,SouthEast,New_York,Chattanooga,Cleveland,Memphis,Denver,Seattle,Reno
+5,SouthEast,Albany,Atlanta,Cleveland,Little_Rock,Denver,Seattle,San_Diego
+6,NorthCentral,Boston,Atlanta,Detroit,New_Orleans,Denver,Seattle,Sacramento
+7,NorthCentral,Buffalo,Atlanta,Detroit,Birmingham,Kansas_City,Seattle,Las_Vegas
+8,NorthEast,Boston,Richmond,Indianapolis,Louisville,Kansas_City,Rapid_City,Phoenix
+9,NorthEast,Portland_ME,Knoxville,Milwaukee,Nashville,Kansas_City,Casper,El_Paso
+10,NorthEast,New_York,Mobile,Milwaukee,Nashville,Pueblo,Billings,Tucumcari
+11,NorthEast,New_York,Knoxville,Chicago,Louisville,Pueblo,Billings,Phoenix
+12,NorthEast,New_York,Mobile,Milwaukee,Memphis,Oklahoma_City,Spokane,Phoenix

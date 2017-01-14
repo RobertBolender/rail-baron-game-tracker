@@ -1,0 +1,12 @@
+Roll,Region,NorthEast,SouthEast,NorthCentral,SouthCentral,Plains,NorthWest,SouthWest
+2,SouthWest,New_York,Norfolk,Cincinnati,Shreveport,Oklahoma_City,Spokane,Los_Angeles
+3,SouthCentral,Washington_DC,Norfolk,Chicago,Shreveport,St._Paul,Salt_Lake_City,SF/Oakland
+4,SouthCentral,Pittsburgh,Norfolk,Cincinnati,Dallas,Minneapolis,Salt_Lake_City,SF/Oakland
+5,SouthCentral,Pittsburgh,Charleston,Cincinnati,New_Orleans,St._Paul,Salt_Lake_City,SF/Oakland
+6,SouthWest,Philadelphia,Miami,Columbus,Dallas,Minneapolis,Portland_OR,Los_Angeles
+7,SouthWest,Washington_DC,Jacksonville,Chicago,San_Antonio,Oklahoma_City,Portland_OR,Los_Angeles
+8,Plains,Philadelphia,Miami,Chicago,Houston,Des_Moines,Portland_OR,Los_Angeles
+9,NorthWest,Baltimore,Tampa,St._Louis,Houston,Omaha,Pocatello,San_Francisco
+10,NorthWest,Baltimore,Tampa,St._Louis,Fort_Worth,Omaha,Butte,San_Francisco
+11,Plains,Baltimore,Mobile,St._Louis,Fort_Worth,Fargo,Butte,San_Francisco
+12,NorthWest,New_York,Norfolk,Chicago,Fort_Worth,Fargo,Portland_OR,San_Francisco

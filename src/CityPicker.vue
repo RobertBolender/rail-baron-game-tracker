@@ -8,6 +8,7 @@
 
 <script>
 import { mapProperties } from './bobx';
+import { getOddOrEven, roll2d6 } from './dice';
 
 export default {
   name: 'CityPicker',
