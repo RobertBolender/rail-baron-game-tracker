@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     time() {
-      this.timenow = moment().format('MMMM Do YYYY, h:mm:ss a');
+      this.timenow = moment().format('MMMM Do YYYY, h:mm a'); //:ss
     }
   },
   mounted() {
