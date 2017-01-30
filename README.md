@@ -28,3 +28,12 @@ Not quite finished yet :-)
 * [x] ~~Track player info in Vuex store~~
 * [x] ~~Calculate destination payoffs~~
 * [ ] Generate random destinations
+
+
+---
+
+## Copyright
+
+The board game Rail Baron was originally created by Avalon Hill, then sold to Hasbro Interactive.
+
+Rail Baron is now an internationally registered trademark of Intersystem Concepts, Inc.
