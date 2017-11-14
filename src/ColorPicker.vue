@@ -1,5 +1,5 @@
 <template>
-  <select class="colorPicker" v-model="playerColor">
+  <select :class="classObject" v-model="playerColor">
     <option v-for="option in options" :value="option">
       {{option}}
     </option>
@@ -13,6 +13,12 @@ export default {
   name: 'ColorPicker',
   props: ['player'],
   computed: {
+    classObject: function(){
+      return {
+        colorPicker: true,
+        [this.playerColor]: true
+      }
+    },
     ...mapProperties([
       'playerColor'
     ])
@@ -26,5 +32,41 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  [value=Red],
+  .Red {
+    background: #f00;
+  }
+  [value=Blue],
+  .Blue {
+    background: #00f;
+  }
+  [value=Green],
+  .Green {
+    background: #0f0;
+  }
+  [value=Yellow],
+  .Yellow {
+    background: #ff0;
+  }
+  [value=White],
+  .White {
+    background: #fff;
+  }
+  [value=Black],
+  .Black {
+    background: #000;
+  }
+
+  .Red,
+  .Blue,
+  .Green,
+  .Yellow,
+  .White,
+  .Black {
+    color: transparent;
+  }
+  option:hover {
+    background-color: inherit;
+  }
 </style>
 
