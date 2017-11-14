@@ -1,10 +1,10 @@
 <template>
   <div class="homePicker">
-    <div v-if="homeCity">
+    <div v-show="homeCity">
       <button @click="pickHome('')">&times;</button>
       Home: {{homeCity}}
     </div>
-    <CityPicker v-else :player="player" :value="homeCity" v-on:input="pickHome" />
+    <CityPicker v-if="!homeCity" :player="player" :value="homeCity" v-on:input="pickHome" />
   </div>
 </template>
 
