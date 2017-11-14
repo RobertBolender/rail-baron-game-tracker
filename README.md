@@ -21,13 +21,11 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 
 ![](./screenshot.png)
 
-Not quite finished yet :-)
-
 ### Todo
 
 * [x] ~~Track player info in Vuex store~~
 * [x] ~~Calculate destination payoffs~~
-* [ ] Generate random destinations
+* [x] Generate random destinations
 
 
 ---
