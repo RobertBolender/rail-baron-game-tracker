@@ -6,7 +6,7 @@ Roll,Region,NorthEast,SouthEast,NorthCentral,SouthCentral,Plains,NorthWest,South
 6,SouthWest,Philadelphia,Miami,Columbus,Dallas,Minneapolis,Portland_OR,Los_Angeles
 7,SouthWest,Washington_DC,Jacksonville,Chicago,San_Antonio,Oklahoma_City,Portland_OR,Los_Angeles
 8,Plains,Philadelphia,Miami,Chicago,Houston,Des_Moines,Portland_OR,Los_Angeles
-9,NorthWest,Baltimore,Tampa,St._Louis,Houston,Omaha,Pocatello,San_Francisco
-10,NorthWest,Baltimore,Tampa,St._Louis,Fort_Worth,Omaha,Butte,San_Francisco
-11,Plains,Baltimore,Mobile,St._Louis,Fort_Worth,Fargo,Butte,San_Francisco
-12,NorthWest,New_York,Norfolk,Chicago,Fort_Worth,Fargo,Portland_OR,San_Francisco
+9,NorthWest,Baltimore,Tampa,St._Louis,Houston,Omaha,Pocatello,SF/Oakland
+10,NorthWest,Baltimore,Tampa,St._Louis,Fort_Worth,Omaha,Butte,SF/Oakland
+11,Plains,Baltimore,Mobile,St._Louis,Fort_Worth,Fargo,Butte,SF/Oakland
+12,NorthWest,New_York,Norfolk,Chicago,Fort_Worth,Fargo,Portland_OR,SF/Oakland
