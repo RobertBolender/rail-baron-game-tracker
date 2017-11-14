@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <span>
     <button @click="changeCity(getRandomCity())" class="cityRandomPicker">Roll</button>
     <select :value="value" @change="changeCity($event.target.value)" class="cityPicker">
       <option v-for="option in options" :value="option">
         {{option}}
       </option>
     </select>
-  </div>
+  </span>
 </template>
 
 <script>
@@ -46,6 +46,7 @@ export default {
 <style lang="scss" scoped>
 .cityPicker {
   display: inline-block;
+  display: none;
 }
 </style>
 

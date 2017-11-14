@@ -1,11 +1,11 @@
 <template>
   <div class="destinationPicker">
-    <div v-if="destination">
+    <template v-if="destination">
       To: <span class="destination">{{destination}}</span>
       For: <span class="payout" v-if="payout">${{payout}}</span>
       <button @click="pickDestination('')">&times;</button>
-    </div>
-    <CityPicker v-else :player="player" :value="destination" v-on:input="pickDestination" />
+    </template>
+    <CityPicker :player="player" :value="destination" v-on:input="pickDestination" />
   </div>
 </template>
 
@@ -19,10 +19,19 @@ export default {
   computed: {
     ...mapProperties([
       'destination',
+      'fromCity',
       'homeCity'
     ]),
     payout: function(){
-      if (this.destination && this.homeCity){
+      if (this.destination && this.fromCity){
+        let payouts = this.$root.$data.payouts;
+        if (typeof payouts[this.destination] === 'undefined' || typeof payouts[this.destination][this.fromCity] === 'undefined'){
+          return 'n/a';
+        }
+        let number = payouts[this.destination][this.fromCity];
+        let string = number.replace('.',',').replace(/$/,'0');
+        return string;
+      } else if (this.destination && this.homeCity){
         let payouts = this.$root.$data.payouts;
         if (typeof payouts[this.destination] === 'undefined' || typeof payouts[this.destination][this.homeCity] === 'undefined'){
           return 'n/a';
@@ -40,6 +49,13 @@ export default {
   },
   methods: {
     pickDestination: function(value){
+      if (value && this.destination){
+        this.$store.commit('updatePlayer', {
+          id        : this.player.id,
+          propName  : 'fromCity',
+          propValue : this.destination
+        });
+      }
       this.$store.commit('updatePlayer', {
         id         : this.player.id,
         propName   : 'destination',
@@ -61,7 +77,7 @@ export default {
 
 .destination {
   display: inline-block;
-  font-weight: bold;
+  color: #fd0;
   min-width: 130px;
 }
 

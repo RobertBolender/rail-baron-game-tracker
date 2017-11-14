@@ -3,7 +3,10 @@
     <ColorPicker :player="player" v-model="playerColor" />
     <input class="playerName" v-model="playerName">
     <HomePicker :player="player" v-model="homeCity" />
-    <DestinationPicker :player="player" v-model="destination" v-if="homeCity" />
+    <span v-if="fromCity">
+      From: <span class="fromCity">{{fromCity}}</span>
+    </span>
+    <DestinationPicker :player="player" v-model="destination" :fromCity="fromCity" v-if="homeCity" />
   </div>
 </template>
 
@@ -21,6 +24,7 @@ export default {
       'playerName',
       'playerColor',
       'homeCity',
+      'fromCity',
       'destination',
       'payout'
     ])
@@ -45,6 +49,7 @@ export default {
   width: 100%;
   padding: 5px;
   text-align: left;
+  color: #888;
 }
 
 .playerName {
@@ -61,5 +66,6 @@ export default {
 .colorPicker {
   display: inline-block;
 }
+
 </style>
 

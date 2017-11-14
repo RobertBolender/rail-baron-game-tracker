@@ -2,7 +2,7 @@
   <div class="homePicker">
     <div v-show="homeCity">
       <button @click="pickHome('')">&times;</button>
-      Home: {{homeCity}}
+      Home: <span class="homeCity">{{homeCity}}</span>
     </div>
     <CityPicker v-if="!homeCity" :player="player" :value="homeCity" v-on:input="pickHome" />
   </div>
@@ -41,6 +41,7 @@ export default {
 <style lang="scss" scoped>
 .homePicker {
   display: inline-block;
+  min-width: 225px;
 }
 </style>
 
