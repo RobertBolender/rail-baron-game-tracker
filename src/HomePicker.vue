@@ -25,6 +25,18 @@ export default {
   },
   methods: {
     pickHome: function(value){
+      if (!value){
+        this.$store.commit('updatePlayer', {
+          id         : this.player.id,
+          propName   : 'fromCity',
+          propValue  : value
+        });
+        this.$store.commit('updatePlayer', {
+          id         : this.player.id,
+          propName   : 'destination',
+          propValue  : value
+        });
+      }
       this.$store.commit('updatePlayer', {
         id         : this.player.id,
         propName   : 'homeCity',
