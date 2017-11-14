@@ -19,7 +19,7 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 
 ## Screenshot
 
-![](./screenshot.png)
+![](./screenshot.png?updated=2017-11-13)
 
 ### Todo
 
