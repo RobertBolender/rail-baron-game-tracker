@@ -1,9 +1,12 @@
 <template>
-  <select :value="value" @change="changeCity($event.target.value)" class="cityPicker">
-    <option v-for="option in options" :value="option">
-      {{option}}
-    </option>
-  </select>
+  <div>
+    <button @click="changeCity(getRandomCity())" class="cityRandomPicker">Roll</button>
+    <select :value="value" @change="changeCity($event.target.value)" class="cityPicker">
+      <option v-for="option in options" :value="option">
+        {{option}}
+      </option>
+    </select>
+  </div>
 </template>
 
 <script>
@@ -22,6 +25,19 @@ export default {
   methods: {
     changeCity: function (value) {
       this.$emit('input', value);
+    },
+    getRandomRegion: function () {
+      var oddOrEven = getOddOrEven() === 'odd' ? 'odds' : 'evens';
+      var regionRoll = roll2d6();
+      var newRegion = this.$root.$data[oddOrEven][regionRoll]['Region'];
+      return newRegion;
+    },
+    getRandomCity: function () {
+      var oddOrEven = getOddOrEven() === 'odd' ? 'odds' : 'evens';
+      var cityRoll = roll2d6();
+      var newRegion = this.getRandomRegion();
+      var newCity = this.$root.$data[oddOrEven][cityRoll][newRegion];
+      return newCity;
     }
   }
 }
