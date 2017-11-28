@@ -86,7 +86,7 @@ export default {
   }
 
   &.inactive {
-    opacity: 0.5;
+    opacity: 0.1;
     pointer-events: none;
     select {
       pointer-events: all;
