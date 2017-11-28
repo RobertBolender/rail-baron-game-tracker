@@ -1,5 +1,5 @@
 <template>
-  <div class="player">
+  <div :class="classObject">
     <ColorPicker
       v-model="playerColor"
       :player="player"
@@ -49,6 +49,12 @@ export default {
     ]),
     'from': function() {
       return this.fromCity ? this.fromCity.replace(/_/g,' ') : '';
+    },
+    'classObject': function() {
+      return {
+        'player': true,
+        'inactive': !this.playerColor
+      }
     }
   },
   methods: {
@@ -72,6 +78,20 @@ export default {
   padding: 5px;
   text-align: left;
   color: #888;
+  transition: all 300ms;
+  &:hover {
+    font-weight: bold;
+    background: #444;
+    border-color: #444;
+  }
+
+  &.inactive {
+    opacity: 0.5;
+    pointer-events: none;
+    select {
+      pointer-events: all;
+    }
+  }
 }
 
 .playerName {

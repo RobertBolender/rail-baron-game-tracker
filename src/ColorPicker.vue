@@ -1,5 +1,6 @@
 <template>
   <select :class="classObject" v-model="playerColor">
+    <option value="">None</option>
     <option v-for="option in options" :value="option">
       {{option}}
     </option>
@@ -32,6 +33,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  [value=''] {
+    background: #333;
+  }
   [value=Red],
   .Red {
     background: #f00;
@@ -67,6 +71,9 @@ export default {
   }
   option:hover {
     background-color: inherit;
+  }
+  select {
+    max-width: 20px;
   }
 </style>
 

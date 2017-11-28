@@ -1,14 +1,14 @@
 <template>
   <div class="homePicker">
-    <div v-show="homeCity">
-      <button @click="pickHome('')">&times;</button>
-      Home: <span class="homeCity">{{home}}</span>
-    </div>
     <CityPicker
       v-if="!homeCity"
       @input="pickHome"
       :player="player"
       />
+    <div v-show="homeCity">
+      <button @click="pickHome('')">&times;</button>
+      Home: <span class="homeCity">{{home}}</span>
+    </div>
   </div>
 </template>
 
@@ -81,6 +81,9 @@ export default {
 .homePicker {
   display: inline-block;
   min-width: 225px;
+  .cityPicker {
+    text-align: left;
+  }
 }
 </style>
 
