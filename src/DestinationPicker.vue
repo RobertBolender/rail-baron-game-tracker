@@ -5,7 +5,10 @@
       For: <span class="payout" v-if="payout">${{payout}}</span>
       <button @click="pickDestination('')">&times;</button>
     </template>
-    <CityPicker :player="player" :value="destination" v-on:input="pickDestination" />
+    <CityPicker
+      v-on:input="pickDestination"
+      :player="player"
+      />
   </div>
 </template>
 
@@ -18,25 +21,30 @@ export default {
   props: ['player'],
   computed: {
     ...mapProperties([
-      'destination',
+      'destinationCity',
+      'destinationRegion',
       'fromCity',
+      'fromRegion',
       'homeCity'
     ]),
+    destination: function(){
+      return this.destinationCity ? this.destinationCity.replace(/_/g,' ') : '';
+    },
     payout: function(){
-      if (this.destination && this.fromCity){
+      if (this.destinationCity && this.fromCity){
         let payouts = this.$root.$data.payouts;
-        if (typeof payouts[this.destination] === 'undefined' || typeof payouts[this.destination][this.fromCity] === 'undefined'){
+        if (typeof payouts[this.destinationCity] === 'undefined' || typeof payouts[this.destinationCity][this.fromCity] === 'undefined'){
           return 'n/a';
         }
-        let number = payouts[this.destination][this.fromCity];
+        let number = payouts[this.destinationCity][this.fromCity];
         let string = number.replace('.',',').replace(/$/,'0');
         return string;
-      } else if (this.destination && this.homeCity){
+      } else if (this.destinationCity && this.homeCity){
         let payouts = this.$root.$data.payouts;
-        if (typeof payouts[this.destination] === 'undefined' || typeof payouts[this.destination][this.homeCity] === 'undefined'){
+        if (typeof payouts[this.destinationCity] === 'undefined' || typeof payouts[this.destinationCity][this.homeCity] === 'undefined'){
           return 'n/a';
         }
-        let number = payouts[this.destination][this.homeCity];
+        let number = payouts[this.destinationCity][this.homeCity];
         let string = number.replace('.',',').replace(/$/,'0');
         return string;
       } else {
@@ -49,17 +57,27 @@ export default {
   },
   methods: {
     pickDestination: function(value){
-      if (value && this.destination){
+      if (value.city && this.destinationCity){
         this.$store.commit('updatePlayer', {
           id        : this.player.id,
           propName  : 'fromCity',
-          propValue : this.destination
+          propValue : this.destinationCity
+        });
+        this.$store.commit('updatePlayer', {
+          id        : this.player.id,
+          propName  : 'fromRegion',
+          propValue : this.destinationRegion
         });
       }
       this.$store.commit('updatePlayer', {
         id         : this.player.id,
-        propName   : 'destination',
-        propValue  : value
+        propName   : 'destinationCity',
+        propValue  : value.city ? value.city : ''
+      });
+      this.$store.commit('updatePlayer', {
+        id         : this.player.id,
+        propName   : 'destinationRegion',
+        propValue  : value.region ? value.region : ''
       });
     }
   },

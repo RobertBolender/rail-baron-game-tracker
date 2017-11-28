@@ -1,12 +1,28 @@
 <template>
   <div class="player">
-    <ColorPicker :player="player" v-model="playerColor" />
-    <input class="playerName" v-model="playerName">
-    <HomePicker :player="player" v-model="homeCity" />
+    <ColorPicker
+      v-model="playerColor"
+      :player="player"
+      />
+    <input
+      v-model="playerName"
+      class="playerName"
+      />
+    <HomePicker
+      v-model="homeCity"
+      :player="player"
+      />
     <span v-if="fromCity">
-      From: <span class="fromCity">{{fromCity}}</span>
+      From: <span class="fromCity">{{from}}</span>
     </span>
-    <DestinationPicker :player="player" v-model="destination" :fromCity="fromCity" v-if="homeCity" />
+    <DestinationPicker
+      v-if="homeCity"
+      :player="player"
+      :fromCity="fromCity"
+      :fromRegion="fromRegion"
+      :destinationCity="destinationCity"
+      :destinationRegion="destinationRegion"
+      />
   </div>
 </template>
 
@@ -25,9 +41,15 @@ export default {
       'playerColor',
       'homeCity',
       'fromCity',
-      'destination',
+      'fromRegion',
+      'destinationCity',
+      'destinationRegion',
+      'pickARegion',
       'payout'
-    ])
+    ]),
+    'from': function() {
+      return this.fromCity ? this.fromCity.replace(/_/g,' ') : '';
+    }
   },
   methods: {
     ...mapMutations([

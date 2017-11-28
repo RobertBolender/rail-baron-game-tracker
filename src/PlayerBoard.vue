@@ -55,7 +55,7 @@ export default {
   ul {
     list-style-type: none;
     padding: 0;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     padding: 20px 0;
     display: flex;

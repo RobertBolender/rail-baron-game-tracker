@@ -25,8 +25,8 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 
 * [x] ~~Track player info in Vuex store~~
 * [x] ~~Calculate destination payoffs~~
-* [x] Generate random destinations
-
+* [x] ~~Generate random destinations~~
+* [x] ~~Implement "choose a region" feature~~
 
 ---
 
