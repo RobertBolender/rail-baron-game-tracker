@@ -1,6 +1,6 @@
 <template>
   <div id="PlayerBoard">
-    <h1>Rail Baron Information</h1>
+    <h1>Rail Baron Game Tracker</h1>
     <span class="time">{{timenow}}</span>
     <ul>
       <li v-for="player in players">
